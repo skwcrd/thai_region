@@ -1,0 +1,2 @@
+library thai_region;
+
