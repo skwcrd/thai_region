@@ -1,5 +1,9 @@
 library models;
 
-import 'package:flutter/cupertino.dart';
+import 'dart:ui'
+  show Locale;
 
+import '../utils/utils.dart';
+
+part 'province.dart';
 part 'translator.dart';
