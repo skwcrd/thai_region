@@ -1,26 +1,30 @@
 part of models;
 
 class SubDistrict {
-  SubDistrict._({
+  const SubDistrict._({
     required this.id,
     required this.name,
     required this.districtId,
+    required this.zipCode,
   });
 
   factory SubDistrict.fromMap(Map<String, dynamic> data) =>
       SubDistrict._(
         id: data['id'],
-        name: Translator.fromMap(data['name']),
-        districtId: -1,
+        zipCode: data['zip_code'],
+        name: Translator._fromMap(data['name']),
+        districtId: data['district_id'] ?? '',
       );
 
-  final int id;
-  final int districtId;
+  final String id;
+  final String districtId;
   final Translator name;
+  final String zipCode;
 
   Map<String, dynamic> toMap() =>
       {
         'id': id,
+        'zip_code': zipCode,
         'name': name.toMap(),
         'district_id': districtId,
       };
@@ -31,6 +35,7 @@ class SubDistrict {
   }) {
     final _name = name.toString(locale: locale);
 
-    return "Sub-district(id: $id, name: $_name, district_id: $districtId)";
+    return "Sub-district(id: $id, zip_code: $zipCode, "
+        "name: $_name, district_id: $districtId)";
   }
 }

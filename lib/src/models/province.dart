@@ -1,51 +1,30 @@
 part of models;
 
 class Province {
-  Province._({
+  const Province._({
     required this.id,
-    required this.region,
     required this.name,
-    required this.district,
+    required this.regionId,
+    this.district = const [],
   });
 
-  factory Province.fromMap(
-    Map<String, dynamic> data, {
-    List<District>? district,
-  }) =>
+  factory Province.fromMap(Map<String, dynamic> data) =>
       Province._(
         id: data['id'],
-        region: getRegion(data['region']),
-        name: Translator.fromMap(data['name']),
-        district: district
-            ?.map((d) =>
-              District._(
-                id: d.id,
-                name: d.name,
-                provinceId: data['id'],
-                subDistrict: d.subDistrict,
-              ))
-            .toList(growable: false)
-          ?? const [],
+        name: Translator._fromMap(data['name']),
+        regionId: data['region_id'] ?? '',
       );
 
-  final int id;
-  final Region region;
+  final String id;
+  final String regionId;
   final Translator name;
   final List<District> district;
 
   Map<String, dynamic> toMap() =>
       {
         'id': id,
-        'region': region.translate.toMap(),
         'name': name.toMap(),
-      };
-
-  Map<String, dynamic> toAllMap() =>
-      {
-        'id': id,
-        'region': region.translate.toMap(),
-        'name': name.toMap(),
-        'district': district.map((d) => d.toAllMap()),
+        'region_id': regionId,
       };
 
   @override
@@ -53,8 +32,7 @@ class Province {
     Locale locale = const Locale('en'),
   }) {
     final _name = name.toString(locale: locale);
-    final _region = region.translate.toString(locale: locale);
 
-    return "Province(id: $id, region: $_region, name: $_name)";
+    return "Province(id: $id, name: $_name, region_id: $regionId)";
   }
 }

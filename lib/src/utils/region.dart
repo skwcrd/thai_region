@@ -1,7 +1,6 @@
 part of utils;
 
-enum Region {
-  unknown,
+enum RegionType {
   central,
   north,
   northeast,
@@ -10,82 +9,30 @@ enum Region {
   west,
 }
 
-extension RegionDescription on Region {
-  Translator get translate {
-    switch (this) {
-      case Region.unknown:
-        return Translator.fromMap({
-          'en': 'unknown',
-          'th': 'ไม่ทราบ',
-        });
-
-      case Region.central:
-        return Translator.fromMap({
-          'en': 'central',
-          'th': 'ภาคกลาง',
-        });
-
-      case Region.north:
-        return Translator.fromMap({
-          'en': 'north',
-          'th': 'ภาคเหนือ',
-        });
-
-      case Region.northeast:
-        return Translator.fromMap({
-          'en': 'northeast',
-          'th': 'ภาคตะวันออกเฉียงเหนือ',
-        });
-
-      case Region.south:
-        return Translator.fromMap({
-          'en': 'south',
-          'th': 'ภาคใต้',
-        });
-
-      case Region.east:
-        return Translator.fromMap({
-          'en': 'east',
-          'th': 'ภาคตะวันออก',
-        });
-
-      case Region.west:
-        return Translator.fromMap({
-          'en': 'west',
-          'th': 'ภาคตะวันตก',
-        });
-    }
-  }
-}
-
-extension RegionCompare on Region {
-  bool get isUnknown =>
-      this == Region.unknown;
+extension RegionTypeCompare on RegionType {
   bool get isCentral =>
-      this == Region.central;
+      this == RegionType.central;
   bool get isNorth =>
-      this == Region.north;
+      this == RegionType.north;
   bool get isNortheast =>
-      this == Region.northeast;
+      this == RegionType.northeast;
   bool get isSouth =>
-      this == Region.south;
+      this == RegionType.south;
   bool get isEast =>
-      this == Region.east;
+      this == RegionType.east;
   bool get isWest =>
-      this == Region.west;
+      this == RegionType.west;
 
-  bool get isNotUnknown =>
-      this != Region.unknown;
   bool get isNotCentral =>
-      this != Region.central;
+      this != RegionType.central;
   bool get isNotNorth =>
-      this != Region.north;
+      this != RegionType.north;
   bool get isNotNortheast =>
-      this != Region.northeast;
+      this != RegionType.northeast;
   bool get isNotSouth =>
-      this != Region.south;
+      this != RegionType.south;
   bool get isNotEast =>
-      this != Region.east;
+      this != RegionType.east;
   bool get isNotWest =>
-      this != Region.west;
+      this != RegionType.west;
 }

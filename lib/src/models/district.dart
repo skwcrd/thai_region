@@ -1,34 +1,22 @@
 part of models;
 
 class District {
-  District._({
+  const District._({
     required this.id,
     required this.name,
     required this.provinceId,
-    required this.subDistrict,
+    this.subDistrict = const [],
   });
 
-  factory District.fromMap(
-    Map<String, dynamic> data, {
-    List<SubDistrict>? subDistrict,
-  }) =>
+  factory District.fromMap(Map<String, dynamic> data) =>
       District._(
         id: data['id'],
-        name: Translator.fromMap(data['name']),
-        provinceId: -1,
-        subDistrict: subDistrict
-            ?.map((d) =>
-              SubDistrict._(
-                id: d.id,
-                name: d.name,
-                districtId: data['id'],
-              ))
-            .toList(growable: false)
-          ?? const [],
+        name: Translator._fromMap(data['name']),
+        provinceId: data['province_id'] ?? '',
       );
 
-  final int id;
-  final int provinceId;
+  final String id;
+  final String provinceId;
   final Translator name;
   final List<SubDistrict> subDistrict;
 
@@ -37,14 +25,6 @@ class District {
         'id': id,
         'name': name.toMap(),
         'province_id': provinceId,
-      };
-
-  Map<String, dynamic> toAllMap() =>
-      {
-        'id': id,
-        'name': name.toMap(),
-        'province_id': provinceId,
-        'sub_district': subDistrict.map((d) => d.toMap()),
       };
 
   @override

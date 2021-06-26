@@ -1,12 +1,12 @@
 part of models;
 
 class Translator {
-  Translator._({
+  const Translator._({
     required this.en,
     required this.th,
   });
 
-  factory Translator.fromMap(Map<String, dynamic> data) =>
+  factory Translator._fromMap(Map<String, dynamic> data) =>
       Translator._(
         en: data['en'],
         th: data['th']);
