@@ -6,4 +6,7 @@ import 'dart:ui'
 import '../utils/utils.dart';
 
 part 'province.dart';
+part 'district.dart';
+part 'sub_district.dart';
+
 part 'translator.dart';

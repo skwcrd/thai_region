@@ -1,51 +1,50 @@
 part of models;
 
-class Province {
-  Province._({
+class District {
+  District._({
     required this.id,
-    required this.region,
     required this.name,
-    required this.district,
+    required this.provinceId,
+    required this.subDistrict,
   });
 
-  factory Province.fromMap(
+  factory District.fromMap(
     Map<String, dynamic> data, {
-    List<District>? district,
+    List<SubDistrict>? subDistrict,
   }) =>
-      Province._(
+      District._(
         id: data['id'],
-        region: getRegion(data['region']),
         name: Translator.fromMap(data['name']),
-        district: district
+        provinceId: -1,
+        subDistrict: subDistrict
             ?.map((d) =>
-              District._(
+              SubDistrict._(
                 id: d.id,
                 name: d.name,
-                provinceId: data['id'],
-                subDistrict: d.subDistrict,
+                districtId: data['id'],
               ))
             .toList(growable: false)
           ?? const [],
       );
 
   final int id;
-  final Region region;
+  final int provinceId;
   final Translator name;
-  final List<District> district;
+  final List<SubDistrict> subDistrict;
 
   Map<String, dynamic> toMap() =>
       {
         'id': id,
-        'region': region.translate.toMap(),
         'name': name.toMap(),
+        'province_id': provinceId,
       };
 
   Map<String, dynamic> toAllMap() =>
       {
         'id': id,
-        'region': region.translate.toMap(),
         'name': name.toMap(),
-        'district': district.map((d) => d.toAllMap()),
+        'province_id': provinceId,
+        'sub_district': subDistrict.map((d) => d.toMap()),
       };
 
   @override
@@ -53,8 +52,7 @@ class Province {
     Locale locale = const Locale('en'),
   }) {
     final _name = name.toString(locale: locale);
-    final _region = region.translate.toString(locale: locale);
 
-    return "Province(id: $id, region: $_region, name: $_name)";
+    return "District(id: $id, name: $_name, province_id: $provinceId)";
   }
 }
