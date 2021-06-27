@@ -16,6 +16,7 @@ void main() {
     test('[default] get data return', () {
       final _data = _instance.getProvince();
       expect(_data, isNotEmpty);
+      expect(_data.length, equals(77));
     });
 
     test('[id] get data return', () {
