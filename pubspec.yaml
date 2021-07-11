@@ -1,7 +1,6 @@
 name: thai_region
 description: The flutter project for provide province, district, sub-district in thailand.
 version: 1.0.0
-author: Sukawit Charoendet <sukawit.ch@hotmail.com>
 homepage: https://github.com/skwcrd/thai_region
 
 environment:
