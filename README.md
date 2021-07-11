@@ -1,5 +1,7 @@
 # Region in Thailand
 
+[![Tests](https://github.com/skwcrd/thai_region/actions/workflows/ci.yml/badge.svg)](https://github.com/skwcrd/thai_region/actions/workflows/ci.yml)
+
 The flutter project for provide province, district, sub-district in thailand.
 
 ## Getting Started
