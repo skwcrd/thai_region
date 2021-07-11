@@ -15,18 +15,57 @@ void main() {
   group('Province Test:', () {
     test('[default] get data return', () {
       final _data = _instance.getProvince();
+
       expect(_data, isNotEmpty);
       expect(_data.length, equals(77));
     });
 
-    test('[id] get data return', () {
-      final _data = _instance.getProvince(regionId: '1');
+    test('[region central type] get data return', () {
+      final _data = _instance.getProvince(
+        region: RegionType.central);
+
       expect(_data, isNotEmpty);
+      expect(_data.length, equals(22));
     });
 
-    test('[id invalid] get data return', () {
-      final _data = _instance.getProvince(regionId: '');
-      expect(_data, isEmpty);
+    test('[region north type] get data return', () {
+      final _data = _instance.getProvince(
+        region: RegionType.north);
+
+      expect(_data, isNotEmpty);
+      expect(_data.length, equals(9));
+    });
+
+    test('[region northeast type] get data return', () {
+      final _data = _instance.getProvince(
+        region: RegionType.northeast);
+
+      expect(_data, isNotEmpty);
+      expect(_data.length, equals(20));
+    });
+
+    test('[region south type] get data return', () {
+      final _data = _instance.getProvince(
+        region: RegionType.south);
+
+      expect(_data, isNotEmpty);
+      expect(_data.length, equals(14));
+    });
+
+    test('[region east type] get data return', () {
+      final _data = _instance.getProvince(
+        region: RegionType.east);
+
+      expect(_data, isNotEmpty);
+      expect(_data.length, equals(7));
+    });
+
+    test('[region west type] get data return', () {
+      final _data = _instance.getProvince(
+        region: RegionType.west);
+
+      expect(_data, isNotEmpty);
+      expect(_data.length, equals(5));
     });
   });
 

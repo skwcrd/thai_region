@@ -2,10 +2,10 @@ part of models;
 
 class Region {
   const Region._({
-    required RegionType type,
+    required this.type,
     required this.name,
     this.province = const [],
-  }) : _type = type;
+  });
 
   static const Region central =
       Region._(
@@ -55,11 +55,11 @@ class Region {
           th: 'ภาคตะวันตก',
         ));
 
-  final RegionType _type;
+  final RegionType type;
   final Translator name;
   final List<Province> province;
 
-  String get id => "${_type.index}";
+  String get id => "${type.index}";
 
   Map<String, dynamic> toMap() =>
       {

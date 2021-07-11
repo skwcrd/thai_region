@@ -2,6 +2,9 @@ library thai_region;
 
 import 'src/data/data.dart';
 import 'src/models/models.dart';
+import 'src/utils/utils.dart';
+
+export 'src/utils/utils.dart';
 
 class ThaiRegion {
   List<Region> getRegion() {
@@ -11,8 +14,8 @@ class ThaiRegion {
     ];
   }
 
-  List<Province> getProvince({ String? regionId }) {
-    if ( regionId == null ) {
+  List<Province> getProvince({ RegionType? region }) {
+    if ( region == null ) {
       return [
         for ( final _region in regionData )
           ..._region.province,
@@ -21,7 +24,7 @@ class ThaiRegion {
     }
 
     for ( final _region in regionData ) {
-      if ( _region.id == regionId ) {
+      if ( _region.type == region ) {
         return List.from(_region.province);
       }
     }
@@ -43,7 +46,9 @@ class ThaiRegion {
 
     for ( final _region in regionData ) {
       for ( final _province in _region.province ) {
-        if ( _province.id == provinceId ) {
+        final _id = _province.id.padLeft(2, '0');
+
+        if ( _id == provinceId ) {
           return List.from(_province.district);
         }
       }

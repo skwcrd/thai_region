@@ -5,7 +5,7 @@ extension RegionExtension on Region {
     List<Province>? data,
   }) =>
       Region._(
-        type: _type,
+        type: type,
         name: name,
         province: data
             ?.map((d) =>
@@ -21,7 +21,7 @@ extension RegionExtension on Region {
 
   Map<String, dynamic> toAllMap() =>
       {
-        'id': _type.index,
+        'id': type.index,
         'name': name.toMap(),
         'province': province.map((d) => d._toAllMap()),
       };
