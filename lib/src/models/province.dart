@@ -10,8 +10,8 @@ class Province {
 
   factory Province.fromMap(Map<String, dynamic> data) =>
       Province._(
-        id: data['id'],
-        name: Translator._fromMap(data['name']),
+        id: data['id'] ?? '',
+        name: Translator._fromMap(data['name'] ?? {}),
         regionId: data['region_id'] ?? '',
       );
 

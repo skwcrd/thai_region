@@ -10,9 +10,9 @@ class SubDistrict {
 
   factory SubDistrict.fromMap(Map<String, dynamic> data) =>
       SubDistrict._(
-        id: data['id'],
-        zipCode: data['zip_code'],
-        name: Translator._fromMap(data['name']),
+        id: data['id'] ?? '',
+        zipCode: data['zip_code'] ?? '',
+        name: Translator._fromMap(data['name'] ?? {}),
         districtId: data['district_id'] ?? '',
       );
 

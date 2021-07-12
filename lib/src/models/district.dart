@@ -10,8 +10,8 @@ class District {
 
   factory District.fromMap(Map<String, dynamic> data) =>
       District._(
-        id: data['id'],
-        name: Translator._fromMap(data['name']),
+        id: data['id'] ?? '',
+        name: Translator._fromMap(data['name'] ?? {}),
         provinceId: data['province_id'] ?? '',
       );
 

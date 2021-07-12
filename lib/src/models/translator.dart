@@ -8,8 +8,8 @@ class Translator {
 
   factory Translator._fromMap(Map<String, dynamic> data) =>
       Translator._(
-        en: data['en'],
-        th: data['th']);
+        en: data['en'] ?? '',
+        th: data['th'] ?? '');
 
   final String en;
   final String th;
