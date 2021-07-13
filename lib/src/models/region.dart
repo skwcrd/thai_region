@@ -4,8 +4,8 @@ class Region {
   const Region._({
     required this.type,
     required this.name,
-    this.province = const [],
-  });
+    List<Province> province = const [],
+  }) : _province = province;
 
   static const Region central =
       Region._(
@@ -57,7 +57,7 @@ class Region {
 
   final RegionType type;
   final Translator name;
-  final List<Province> province;
+  final List<Province> _province;
 
   String get id => "${type.index}";
 

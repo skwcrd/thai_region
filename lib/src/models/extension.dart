@@ -1,6 +1,8 @@
 part of models;
 
 extension RegionExtension on Region {
+  List<Province> get province => _province;
+
   Region setData({
     List<Province>? data,
   }) =>
@@ -28,6 +30,8 @@ extension RegionExtension on Region {
 }
 
 extension ProvinceExtension on Province {
+  List<District> get district => _district;
+
   Province setData({
     List<District>? data,
   }) =>
@@ -57,6 +61,8 @@ extension ProvinceExtension on Province {
 }
 
 extension DistrictExtension on District {
+  List<SubDistrict> get subDistrict => _subDistrict;
+
   District setData({
     List<SubDistrict>? data,
   }) =>

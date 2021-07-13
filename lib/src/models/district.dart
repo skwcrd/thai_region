@@ -5,8 +5,8 @@ class District {
     required this.id,
     required this.name,
     required this.provinceId,
-    this.subDistrict = const [],
-  });
+    List<SubDistrict> subDistrict = const [],
+  }) : _subDistrict = subDistrict;
 
   factory District.fromMap(Map<String, dynamic> data) =>
       District._(
@@ -18,7 +18,7 @@ class District {
   final String id;
   final String provinceId;
   final Translator name;
-  final List<SubDistrict> subDistrict;
+  final List<SubDistrict> _subDistrict;
 
   Map<String, dynamic> toMap() =>
       {
