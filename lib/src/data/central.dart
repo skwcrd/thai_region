@@ -900,7 +900,7 @@ final _central = Region.central
             District.fromMap({
               "id": "1351",
               "name": {
-                "en": "Khlong Luang(Kukod)",
+                "en": "Khlong Luang (Kukod)",
                 "th": "ลำลูกกา (สาขาตำบลคูคต)*",
               },
             })
