@@ -3,9 +3,10 @@ part of models;
 class Region {
   const Region._({
     required this.type,
-    required this.name,
+    required Translator name,
     List<Province> province = const [],
-  }) : _province = province;
+  }) :  _name = name,
+        _province = province;
 
   static const Region central =
       Region._(
@@ -56,22 +57,30 @@ class Region {
         ));
 
   final RegionType type;
-  final Translator name;
+  final Translator _name;
   final List<Province> _province;
 
   String get id => "${type.index}";
 
+  @visibleForTesting
+  Translator get name => _name;
+
+  String getName({
+    Locale locale = const Locale('en'),
+  }) =>
+      _name.toString(locale: locale);
+
   Map<String, dynamic> toMap() =>
       {
         'id': id,
-        'name': name.toMap(),
+        'name': _name.toMap(),
       };
 
   @override
   String toString({
     Locale locale = const Locale('en'),
   }) {
-    final _name = name.toString(locale: locale);
+    final _name = getName(locale: locale);
 
     return "Region(id: $id, name: $_name)";
   }

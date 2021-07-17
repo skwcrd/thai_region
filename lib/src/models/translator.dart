@@ -14,6 +14,10 @@ class Translator {
   final String en;
   final String th;
 
+  @visibleForTesting
+  bool get check =>
+      en.isNotEmpty && th.isNotEmpty;
+
   Map<String, dynamic> toMap() =>
       {
         'en': en,
@@ -24,5 +28,5 @@ class Translator {
   String toString({
     Locale locale = const Locale('en'),
   }) =>
-      (locale.languageCode == 'th') ? th : en;
+      (locale.languageCode == 'en') ? en : th;
 }

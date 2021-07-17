@@ -3,10 +3,11 @@ part of models;
 class District {
   const District._({
     required this.id,
-    required this.name,
+    required Translator name,
     required this.provinceId,
     List<SubDistrict> subDistrict = const [],
-  }) : _subDistrict = subDistrict;
+  }) :  _name = name,
+        _subDistrict = subDistrict;
 
   factory District.fromMap(Map<String, dynamic> data) =>
       District._(
@@ -17,13 +18,21 @@ class District {
 
   final String id;
   final String provinceId;
-  final Translator name;
+  final Translator _name;
   final List<SubDistrict> _subDistrict;
+
+  @visibleForTesting
+  Translator get name => _name;
+
+  String getName({
+    Locale locale = const Locale('en'),
+  }) =>
+      _name.toString(locale: locale);
 
   Map<String, dynamic> toMap() =>
       {
         'id': id,
-        'name': name.toMap(),
+        'name': _name.toMap(),
         'province_id': provinceId,
       };
 
@@ -31,7 +40,7 @@ class District {
   String toString({
     Locale locale = const Locale('en'),
   }) {
-    final _name = name.toString(locale: locale);
+    final _name = getName(locale: locale);
 
     return "District(id: $id, name: $_name, province_id: $provinceId)";
   }

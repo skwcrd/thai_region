@@ -3,6 +3,9 @@ library models;
 import 'dart:ui'
   show Locale;
 
+import 'package:meta/meta.dart'
+  show visibleForTesting;
+
 import '../utils/utils.dart';
 
 part 'region.dart';

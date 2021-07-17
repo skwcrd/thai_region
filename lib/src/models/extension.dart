@@ -8,12 +8,12 @@ extension RegionExtension on Region {
   }) =>
       Region._(
         type: type,
-        name: name,
+        name: _name,
         province: data
             ?.map((d) =>
               Province._(
                 id: d.id,
-                name: d.name,
+                name: d._name,
                 regionId: id,
                 district: d.district,
               ))
@@ -23,8 +23,8 @@ extension RegionExtension on Region {
 
   Map<String, dynamic> toAllMap() =>
       {
-        'id': type.index,
-        'name': name.toMap(),
+        'id': id,
+        'name': _name.toMap(),
         'province': province.map((d) => d._toAllMap()),
       };
 }
@@ -38,12 +38,12 @@ extension ProvinceExtension on Province {
       Province._(
         id: id,
         regionId: regionId,
-        name: name,
+        name: _name,
         district: data
             ?.map((d) =>
               District._(
                 id: d.id,
-                name: d.name,
+                name: d._name,
                 provinceId: id,
                 subDistrict: d.subDistrict,
               ))
@@ -54,7 +54,7 @@ extension ProvinceExtension on Province {
   Map<String, dynamic> _toAllMap() =>
       {
         'id': id,
-        'name': name.toMap(),
+        'name': _name.toMap(),
         'region_id': regionId,
         'district': district.map((d) => d._toAllMap()),
       };
@@ -68,13 +68,13 @@ extension DistrictExtension on District {
   }) =>
       District._(
         id: id,
-        name: name,
+        name: _name,
         provinceId: provinceId,
         subDistrict: data
             ?.map((d) =>
               SubDistrict._(
                 id: d.id,
-                name: d.name,
+                name: d._name,
                 districtId: id,
                 zipCode: d.zipCode,
               ))
@@ -85,7 +85,7 @@ extension DistrictExtension on District {
   Map<String, dynamic> _toAllMap() =>
       {
         'id': id,
-        'name': name.toMap(),
+        'name': _name.toMap(),
         'province_id': provinceId,
         'sub_district': subDistrict.map((d) => d.toMap()),
       };
