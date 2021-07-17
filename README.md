@@ -6,12 +6,6 @@ The flutter project for provide province, district, sub-district in thailand.
 
 ## Getting Started
 
-This project is a starting point for a Dart [package](https://flutter.dev/developing-packages/), a library module containing code that can be shared easily across multiple Flutter or Dart projects.
-
-For help getting started with Flutter, view our [online documentation](https://flutter.dev/docs), which offers tutorials, samples, guidance on mobile development, and a full API reference.
-
-## Installation
-
 Download or clone repository and add a dependency on the `thai_region` package in the `dependencies` section of pubspec.yaml (recommend use this):
 
 ```yaml
@@ -36,8 +30,62 @@ and then run the shell.
 flutter pub get
 ```
 
-last step import to the project:
+For help getting started with Flutter, view our [online documentation](https://flutter.dev/docs), which offers tutorials, samples, guidance on mobile development, and a full API reference.
+
+## Usage
+
+Import package `thai_region.dart` to the project:
 
 ```dart
 import 'package:thai_region/thai_region.dart';
+```
+
+### Create class object
+
+Create instance `ThaiRegion` class:
+
+  ```dart
+  var thaiRegion = ThaiRegion();
+  ```
+
+### Get region
+
+```dart
+var region = thaiRegion.getRegion();
+```
+
+### Get province
+
+```dart
+var province = thaiRegion.getProvince();
+```
+
+Get by provide **RegionType**:
+
+```dart
+var province = thaiRegion.getProvince(region: RegionType.central);
+```
+
+### Get district
+
+```dart
+var district = thaiRegion.getDistrict();
+```
+
+Get by provide province ID:
+
+```dart
+var district = thaiRegion.getDistrict(provinceId: 'XX');
+```
+
+### Get sub-district
+
+```dart
+var subDistrict = thaiRegion.getSubDistrict();
+```
+
+Get by provide district ID:
+
+```dart
+var subDistrict = thaiRegion.getSubDistrict(districtId: 'XXXX');
 ```
