@@ -27,6 +27,14 @@ class Translator {
   @override
   String toString({
     Locale locale = const Locale('en'),
-  }) =>
-      (locale.languageCode == 'en') ? en : th;
+  }) {
+    switch (locale.languageCode) {
+      case 'en':
+        return en;
+      case 'th':
+        return th;
+      default:
+        return '';
+    }
+  }
 }

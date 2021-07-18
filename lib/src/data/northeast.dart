@@ -15001,7 +15001,7 @@ final _northeast = Region.northeast
               data: [
                 SubDistrict.fromMap({
                   "id": "402901",
-                  "zip_code": "0",
+                  "zip_code": "40150",
                   "name": {
                     "en": "Nai Mueang",
                     "th": "ในเมือง",
@@ -15009,7 +15009,7 @@ final _northeast = Region.northeast
                 }),
                 SubDistrict.fromMap({
                   "id": "402902",
-                  "zip_code": "0",
+                  "zip_code": "40150",
                   "name": {
                     "en": "Mueang Kao Phatthana",
                     "th": "เมืองเก่าพัฒนา",
@@ -15017,7 +15017,7 @@ final _northeast = Region.northeast
                 }),
                 SubDistrict.fromMap({
                   "id": "402903",
-                  "zip_code": "0",
+                  "zip_code": "40150",
                   "name": {
                     "en": "Khao Noi",
                     "th": "เขาน้อย",

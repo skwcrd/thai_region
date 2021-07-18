@@ -1,3 +1,6 @@
+import 'dart:ui'
+  show Locale;
+
 import 'package:flutter_test/flutter_test.dart';
 
 import 'package:thai_region/thai_region.dart'
@@ -28,6 +31,12 @@ void main() {
         expect(
           _data.every((d) => d.name.check), isTrue,
           reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName().isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
       });
     });
   });
@@ -52,6 +61,12 @@ void main() {
         expect(
           _data.every((d) => d.name.check), isTrue,
           reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName().isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
       });
     });
 
@@ -74,6 +89,12 @@ void main() {
       test('Check name in data model', () {
         expect(
           _data.every((d) => d.name.check), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName().isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
           reason: 'Check data name in model is not empty');
       });
     });
@@ -98,6 +119,12 @@ void main() {
         expect(
           _data.every((d) => d.name.check), isTrue,
           reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName().isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
       });
     });
 
@@ -120,6 +147,12 @@ void main() {
       test('Check name in data model', () {
         expect(
           _data.every((d) => d.name.check), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName().isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
           reason: 'Check data name in model is not empty');
       });
     });
@@ -144,6 +177,12 @@ void main() {
         expect(
           _data.every((d) => d.name.check), isTrue,
           reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName().isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
       });
     });
 
@@ -166,6 +205,12 @@ void main() {
       test('Check name in data model', () {
         expect(
           _data.every((d) => d.name.check), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName().isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
           reason: 'Check data name in model is not empty');
       });
     });
@@ -190,6 +235,12 @@ void main() {
         expect(
           _data.every((d) => d.name.check), isTrue,
           reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName().isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
       });
     });
   });
@@ -208,6 +259,12 @@ void main() {
         expect(
           _data.every((d) => d.name.check), isTrue,
           reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName().isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
       });
     });
 
@@ -225,6 +282,12 @@ void main() {
           expect(
             _data.every((d) => d.name.check), isTrue,
             reason: 'Check data name in model is not empty');
+          expect(
+            _data.every((d) => d.getName().isNotEmpty), isTrue,
+            reason: 'Check data name in model is not empty');
+          expect(
+            _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
+            reason: 'Check data name in model is not empty');
         });
       });
 
@@ -240,6 +303,12 @@ void main() {
         test('Check name in data model', () {
           expect(
             _data.every((d) => d.name.check), isTrue,
+            reason: 'Check data name in model is not empty');
+          expect(
+            _data.every((d) => d.getName().isNotEmpty), isTrue,
+            reason: 'Check data name in model is not empty');
+          expect(
+            _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
             reason: 'Check data name in model is not empty');
         });
       });
@@ -292,12 +361,21 @@ void main() {
         expect(
           _data.every((d) => d.name.check), isTrue,
           reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName().isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
       });
 
       test('Check zip-code in data model', () {
         expect(
           _data.every((d) => d.zipCode.isNotEmpty), isTrue,
           reason: 'Check data zip-code in model is not empty');
+        expect(
+          _data.every((d) => d.zipCode.length == 5), isTrue,
+          reason: 'Check data zip-code in model is characters length equal to 5 characters');
       });
     });
 
@@ -314,12 +392,21 @@ void main() {
         expect(
           _data.every((d) => d.name.check), isTrue,
           reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName().isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
+        expect(
+          _data.every((d) => d.getName(locale: const Locale('th')).isNotEmpty), isTrue,
+          reason: 'Check data name in model is not empty');
       });
 
       test('Check zip-code in data model', () {
         expect(
           _data.every((d) => d.zipCode.isNotEmpty), isTrue,
           reason: 'Check data zip-code in model is not empty');
+        expect(
+          _data.every((d) => d.zipCode.length == 5), isTrue,
+          reason: 'Check data zip-code in model is characters length equal to 5 characters');
       });
     });
 
@@ -363,6 +450,126 @@ void main() {
             reason: 'Check data array is empty when provide district ID incorrect');
         });
       });
+    });
+  });
+
+  group('Check ID', () {
+    test('region ID', () {
+      final _data = _instance.getRegion();
+
+      expect(
+        _data.every((d) => d.id.isNotEmpty), isTrue,
+        reason: 'Check region ID is not empty');
+      expect(
+        _data.every((d) => d.id.length == 1), isTrue,
+        reason: 'Check region ID is characters length equal to one character');
+    });
+
+    test('province ID', () {
+      final _data = _instance.getProvince();
+
+      expect(
+        _data.every((d) => d.id.isNotEmpty), isTrue,
+        reason: 'Check province ID is not empty');
+      expect(
+        _data.every((d) => d.id.length == 1 || d.id.length == 2), isTrue,
+        reason: 'Check province ID is characters length equal to one or two characters');
+    });
+
+    test('district ID', () {
+      final _data = _instance.getDistrict();
+
+      expect(
+        _data.every((d) => d.id.isNotEmpty), isTrue,
+        reason: 'Check district ID is not empty');
+      expect(
+        _data.every((d) => d.id.length == 4), isTrue,
+        reason: 'Check district ID is characters length equal to 4 characters');
+    });
+
+    test('sub-district ID', () {
+      final _data = _instance.getSubDistrict();
+
+      expect(
+        _data.every((d) => d.id.isNotEmpty), isTrue,
+        reason: 'Check sub-district ID is not empty');
+      expect(
+        _data.every((d) => d.id.length == 6), isTrue,
+        reason: 'Check sub-district ID is characters length equal to 6 characters');
+    });
+
+    test('sub-district ID reference district ID', () {
+      expect(
+        _instance
+          .getDistrict()
+          .every((district) =>
+            _instance
+              .getSubDistrict(districtId: district.id)
+              .every((subDistrict) =>
+                subDistrict.id.startsWith(district.id))),
+        isTrue,
+        reason: 'Check district ID reference in sub-district ID');
+    });
+  });
+
+  group('Check reference ID', () {
+    test('province data', () {
+      final _data = _instance.getProvince();
+
+      expect(
+        _data.every((d) => d.regionId.isNotEmpty), isTrue,
+        reason: 'Check region ID is not empty');
+    });
+
+    test('district data', () {
+      final _data = _instance.getDistrict();
+
+      expect(
+        _data.every((d) => d.provinceId.isNotEmpty), isTrue,
+        reason: 'Check province ID is not empty');
+    });
+
+    test('sub-district data', () {
+      final _data = _instance.getSubDistrict();
+
+      expect(
+        _data.every((d) => d.districtId.isNotEmpty), isTrue,
+        reason: 'Check district ID is not empty');
+    });
+
+    test('all data', () {
+      expect(
+        _instance
+          .getRegion()
+          .every((region) =>
+            _instance
+              .getProvince(region: region.type)
+              .every((province) =>
+                region.id == province.regionId)),
+        isTrue,
+        reason: 'Check region ID equal to reference ID in province');
+
+      expect(
+        _instance
+          .getProvince()
+          .every((province) =>
+            _instance
+              .getDistrict(provinceId: province.id)
+              .every((district) =>
+                province.id == district.provinceId)),
+        isTrue,
+        reason: 'Check province ID equal to reference ID in district');
+
+      expect(
+        _instance
+          .getDistrict()
+          .every((district) =>
+            _instance
+              .getSubDistrict(districtId: district.id)
+              .every((subDistrict) =>
+                district.id == subDistrict.districtId)),
+        isTrue,
+        reason: 'Check district ID equal to reference ID in sub-district');
     });
   });
 }
