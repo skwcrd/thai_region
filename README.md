@@ -1,6 +1,6 @@
 # Region in Thailand
 
-[![Tests](https://github.com/skwcrd/thai_region/actions/workflows/ci.yml/badge.svg)](https://github.com/skwcrd/thai_region/actions/workflows/ci.yml)
+[![Build Status](https://github.com/skwcrd/thai_region/actions/workflows/ci.yml/badge.svg)](https://github.com/skwcrd/thai_region/actions/workflows/ci.yml)
 
 The flutter project for provide province, district, sub-district in thailand.
 
@@ -89,3 +89,17 @@ Get by provide district ID:
 ```dart
 var subDistrict = thaiRegion.getSubDistrict(districtId: 'XXXX');
 ```
+
+### Method/Attribute in data models
+
+| Method/Attribute | Params | Return | Return Type |
+| ------------- | ------------- | ------------- | ------------- |
+| id | None | Data ID | String |
+| Reference ID (regionId, provinceId, districtId) | None | Reference ID | String |
+| zipCode (For **SubDistrict** class only) | None | Postal code of each sub-district | String |
+| getName(...) | locale (default: Locale('en')) | Localization name | String |
+| toMap() | None | Map data models | Map<String, dynamic> |
+
+## Changelog
+
+Refer to the [Changelog](https://github.com/skwcrd/thai_region/blob/main/CHANGELOG.md) to get all release notes.
